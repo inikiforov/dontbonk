@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        {% block head%}
+            <title>Don't Bonk! - Homepage</title>
+        {% endblock %}
+</head>
+
+
+
+<body>
+    {% block body %}
+        <div class="container">
+        <br>
+            <h1>Don't Bonk&trade; Triathlon Nutrition Planner</h1>
+            <h2>Science based approach to a perfect race nutrition plan</h2>
+            <h5><small class="text-muted">Planner v0.03b</small></h5>
+            <br>
+            <p>It is often said that in triathlon <mark>nutrition is the fourth discipline</mark>. So it is extemely important you nail your carbs, calories and liquid on a race day and get the best results that you worked hard to achieve.
+            This planner will help you to estimate the amount of each and then to put it into practice by selecting the right products for the job. You can read more on how it works in the Research section.</p>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>
+                            Step 1 - Enter your data and target race pace
+                        </h2>
+                        <br>
+                            <form method="POST">
+                                <table>
+                                    {% csrf_token %}
+                                    {{ form.errors }}
+                                    {{ form.as_table }}
+                                </table>
+                                <br>
+                                <input class="btn btn-primary" type="submit" name="calculate" value="Submit">
+                            </form>
+                            <br>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div claa="col">
+                        <br>
+                        <h2>
+                            Step 2 - Estimate your target carbohydrates, calories and liquid intakes
+                        </h2>
+                        <br>
+                        <p>
+                            Your <mark>total race time</mark> is estimated at {{ total_time }}. Here how the leg times are split:
+                        </p>
+
+                        <div class="row">
+                          <div class="col">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">{{ swim_time }}</h4>
+                                  <h5 class="card-subtitle mb-2 text-muted">&#127946; Swim</h5>
+                                <p class="card-text">No carbs or calories should be consumed during the swim. Maybe accept seawater and your fellow triathletes wee.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">{{ bike_time }}</h4>
+                                  <h5 class="card-subtitle mb-2 text-muted">&#128690; Bike</h5>
+                                <p class="card-text">The best time to recover your losses and consume as much carbs, calories and luquids as practicable.</p>
+                              </div>
+                            </div>
+                          </div>
+                            <div class="col">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">{{ run_time }}</h4>
+                                  <h5 class="card-subtitle mb-2 text-muted">&#127939 Run</h5>
+                                <p class="card-text">Usually it is difficult to consume too much during running leg of the race. You should aim at 2/3 of bike's consumption rate.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+
+                        <p>
+                            Here is what your nutrition targets could look like:
+                        </p>
+
+                        <div class="row">
+                            <div class="col">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Leg</th>
+                                      <th scope="col">Carbs (grams)</th>
+                                      <th scope="col">Liquid (ml)</th>
+                                        <th scope="col">Sodium (mgrams)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">Pre-Race</th>
+                                      <td>20-60</td>
+                                        <td>500</td>
+                                      <td>300-500</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Swim</th>
+                                      <td>0</td>
+                                        <td>0</td>
+                                      <td>0</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Bike</th>
+                                      <td>{{ bike_carbs_target }}</td>
+                                        <td>{{ bike_liquid_target }}</td>
+                                        <td>{{ bike_sodium_target }}</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Run</th>
+                                      <td>{{ run_carbs_target }}</td>
+                                        <td>{{ run_liquid_target }}</td>
+                                        <td>{{ run_sodium_target }}</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Race Total</th>
+                                      <td>{{carbs_required}}</td>
+                                      <td>{{liquid_required}}</td>
+                                        <td>{{sodium_required}}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <br>
+                    <h2>
+                        Step 3 - Plan your nutrition strategy
+                    </h2>
+                    <br>
+                    <p>
+                        Don't bonk (tm) suggests planning your nutrition around purpose built sports nutrition products. This will help <mark>lower chances of GI distress and improve results</mark>.
+                        But it is still important to know what nutritional value each product provides and to plan accordingly. Here are examples based on Maurten, SIS and GU products.
+                    </p>
+                    <h4>
+                        Bike
+                    </h4>
+                    <p>
+
+                <div class="row">
+                            <div class="col">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Product</th>
+                                        <th scope="col">Servings</th>
+                                      <th scope="col">Carbs (grams)</th>
+                                        <th scope="col">Liquid (ml)</th>
+                                        <th scope="col">Sodium (mg)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for i in bike_display_set_list %}
+                                    <tr>
+                                      <th scope="row">{{ i.full_name }}
+                                      </th>
+                                      <td>{{ i.ammount }}</td>
+                                      <td>{{ i.carbs }}</td>
+                                        <td>{{ i.liquid }}</td>
+                                        <td>{{ i.sodium }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                  </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    <h4>
+                        Run
+                    </h4>
+                    <div class="row">
+                            <div class="col">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Product</th>
+                                        <th scope="col">Servings</th>
+                                        <th scope="col">Carbs (grams)</th>
+                                        <th scope="col">Liquid (ml)</th>
+                                        <th scope="col">Sodium (mg)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for i in run_display_set_list %}
+                                    <tr>
+                                     <th scope="row">{{ i.full_name }}</th>
+                                        <td>{{ i.ammount }}</td>
+                                        <td>{{ i.carbs }}</td>
+                                        <td>{{ i.liquid }}</td>
+                                        <td>{{ i.sodium }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                  </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <br>
+        <br>
+    {% endblock %}
+</body>
+</html>
