@@ -8,6 +8,7 @@
         {% endblock %}
 </head>
 <body>
+{% load static %}
     {% block body %}
         <br>
         <h1>Why I made Don't Bonk?</h1>
@@ -30,6 +31,7 @@ I made [dontbonk.io](http://dontbonk.io) not as just another nutrition calculato
 My aim was to be somewhere between a folklore broscience and a qualified personal coach, which in my opinion is still the best option for a predictable result. <br>
 <br>
 [picture]<br>
+            <img src="{% static 'main/test.jpeg' %}">
 <br>
 It is not perfect by any means. It is just a tool. And I am looking forward to your feedback to make it better.<br></p>
     {% endblock %}
