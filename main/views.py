@@ -9,6 +9,7 @@ from itertools import chain
 
 def get(self, request):
     form = CalculationForm()
+    product_form = ProductForm()
     return render(request, self.template_name)
 
 def home(request):
@@ -21,12 +22,13 @@ def home(request):
     product_form = ProductForm()
 
     if request.method == "POST":
-
         if 'calculate' in request.POST:
             form = CalculationForm(request.POST)
 
             if form.is_valid():
                 input = form.cleaned_data
+                print('Showing the input',input)
+                print(type(input['food_products']))
                 result = total_tri_time(input)
                 nutrition = total_nutrition(result,input)
 
@@ -35,6 +37,7 @@ def home(request):
                     'food': [],
                     'sodium_drink': [],
                     'sodium_food': [],
+                    'water': [],
                     'liquid': 0,
                     'caffene': 0,
                     'carbs': 0,
@@ -47,6 +50,7 @@ def home(request):
                     'food': [],
                     'sodium_drink': [],
                     'sodium_food': [],
+                    'water': [],
                     'liquid': 0,
                     'caffene': 0,
                     'carbs': 0,
@@ -66,15 +70,38 @@ def home(request):
                 random_sodium_drink = choice(all_sodium_drinks)
                 print(random_sodium_drink)
 
+                all_water = q_set.filter(category='water')
+                water = choice(all_water)
+
                 sodium_food = q_set.filter(short_name='judees_sodium')
                 sodium_food = choice(sodium_food)
 
-                product_set = {
+                random_product_set = {
                     'drink': random_drink.simplify(),
                     'food': random_food.simplify(),
                     'sodium_drink': random_sodium_drink.simplify(),
                     'sodium_food': sodium_food.simplify(),
+                    'water':water.simplify(),
                 }
+
+                product_set = {
+                    'drink': input['drink_products'],
+                    'food': input['food_products'],
+                    'sodium_drink': input['sodium_drink_products'],
+                    'sodium_food': input['sodium_food_products'],
+                    'water': None,
+                }
+
+
+                for i in product_set:
+                    if product_set[i] is None:
+                        product_set[i] = random_product_set[i]
+                    else:
+                        product_set[i] = product_set[i].simplify()
+
+                print('Chosen product set',product_set)
+
+
                 print(product_set)
                 target = {
                     'carbs':int(nutrition[0]),
@@ -110,6 +137,7 @@ def home(request):
                 bike_nutrition_list.extend(products_bike['food'])
                 bike_nutrition_list.extend(products_bike['sodium_drink'])
                 bike_nutrition_list.extend(products_bike['sodium_food'])
+                bike_nutrition_list.extend(products_bike['water'])
                 bike_nutrition_list_summary = count_list_items(bike_nutrition_list)
 
                 bike_display_set_list = nutrition_planner(bike_nutrition_list_summary, q_set)
@@ -118,6 +146,7 @@ def home(request):
                 run_nutrition_list.extend(products_run['food'])
                 run_nutrition_list.extend(products_run['sodium_drink'])
                 run_nutrition_list.extend(products_run['sodium_food'])
+                run_nutrition_list.extend(products_run['water'])
                 run_nutrition_list_summary = count_list_items(run_nutrition_list)
 
                 run_display_set_list = nutrition_planner(run_nutrition_list_summary, q_set)
@@ -128,7 +157,7 @@ def home(request):
 
 
 
-
+        print(bike_display_set_list)
         args = {
             'form':form,
             'product_form':product_form,
@@ -155,7 +184,9 @@ def home(request):
 
     else:
         form = CalculationForm()
-        return render(request, 'main/home.html', {'form': form})
+        product_form = ProductForm()
+        return render(request, 'main/home.html', {'form': form,
+                                                  'product_form': product_form})
 
 def research(request):
     return render(request, 'main/research.html')

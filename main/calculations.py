@@ -38,8 +38,8 @@ def total_tri_time(input):
     swim_time = ((input['swim_distance']/100)*input['swim_pace']).seconds
     bike_time = (input['bike_distance']/input['bike_avg_speed'])*60*60
     run_time = (input['run_distance']*input['run_pace']).seconds
-    t1_time = input['t1_time'].seconds
-    t2_time = input['t2_time'].seconds
+    t1_time = 0
+    t2_time = 0
     return [swim_time+bike_time+run_time,swim_time, t1_time, bike_time, t2_time, run_time]
 
 '''
@@ -97,6 +97,9 @@ def plan_bike(plan, product_set, target, storage_limits):
     #add sodium suplements that can be mixed in existing liquid or taken without liquid
     while plan['sodium'] + product_set['sodium_food']['sodium'] <= target['sodium']:
         add_serving(plan, 'sodium_food', product_set['sodium_food'])
+    #add course water
+    while plan['liquid'] + product_set['water']['liquid'] <= target['liquid']:
+        add_serving(plan, 'water', product_set['water'])
 
     return plan
 
@@ -109,6 +112,9 @@ def plan_run(plan, product_set, target, storage_limits):
 
     while plan['sodium'] + product_set['sodium_food']['sodium'] <= target['sodium']:
         add_serving(plan, 'sodium_food', product_set['sodium_food'])
+
+    while plan['liquid'] + product_set['water']['liquid'] <= target['liquid']:
+        add_serving(plan, 'water', product_set['water'])
 
     return plan
 

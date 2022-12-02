@@ -6,7 +6,7 @@ class Nutrition(models.Model):
     short_name = models.CharField(max_length=100)
     brand_name = models.CharField(max_length=100, default='None')
     drink = models.BooleanField(default=False)
-    category = models.CharField(choices=[('drink', 'Drink'), ('food','Food'), ('caffene','Caffene'), ('sodium_drink', 'Sodium Drink'), ('sodium_tabs', 'Sodium Tabs'), ('water', 'Water')], max_length=20)
+    category = models.CharField(choices=[('drink', 'Drink'), ('food','Food'), ('caffene','Caffene'), ('sodium_drink', 'Sodium Drink'), ('sodium_food', 'Sodium Tabs and Powders'), ('water', 'Water')], max_length=20)
     calories = models.IntegerField()
     carbs = models.IntegerField()
     liquid = models.IntegerField()

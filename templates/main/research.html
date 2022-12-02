@@ -4,12 +4,61 @@
 <head>
     <meta charset="UTF-8">
         {% block head%}
-            <title>Don't Bonk! - Research</title>
+            <title>Don't Bonk! - Ironman Nutrition Research</title>
+            <meta name="description" property="og:description" content="Article with all research papers that were used for Don't Bonk nutrition calculator">
+            <meta name="keywords" content="triathlon, ironman, nutrition, calculator, research">
         {% endblock %}
 </head>
 <body>
     {% block body %}
-        <h1>Research</h1>
+        <div class="container-xsm">
+        <br>
+        <h1>Ultra-endurance Triathlon Nutrition Research</h1>
+        <h2>The question of &ldquo;How Much?&rdquo;</h2>
+        <br>
+        <p>Long distance triathlon and other ultra-endurance events demand extremely high levels of energy expended by the competing athlete. It has been estimated, that during an ultra-endurance event such as a standard Ironman athletes expend from 8,500 to 11,500 kcal [1]. However due to natural limitations <mark>it is impossible to consume equal amount of calories</mark> while still performing in a competitive sport. Average energy intake in studied groups was in the range of 3940 kcal. Ultra-endurance athletes usually perform at energy deficits of 60% and above.</p>
+<p>Thus the task of planning a racing nutrition strategy should be guided not just by the question of &ldquo;how much should I consume&rdquo; but also primarily by &ldquo;how much can I consume&rdquo;.</p>
+<p>The question of ability then branched into two separate discussions: the logistics of making the right nutrition available to the athlete and the physiological capabilities of a particular athlete to consume nutrition. The latter of which is a primary concern of Don&rsquo;t Bonk Nutrition Planner.</p>
+        <p>There are many ways to fail in nutrition aspect of a long-distance triathlon race. But through experience it has been established that two factors contribute disproportionately to limiting athletes performance: <mark>insufficient carbohydrates intake and incorrect hydration strategy</mark> leading to dehydration or hyponatremia. This helps us to prioritize these aspects during planning.</p>
+<br>
+        <h2>Carbohydrates</h2>
+<p>The primary source of energy for any athletic activity of moderate to high intensity lasting more than 180 seconds are carbohydrates. It is achieved through aerobic pathway during which body uses fat and carbohydrate oxidation of substrates that are both endogenous and exogenous in origin. The major substates include muscle and liver glycogen, intramuscular lipid, adipose tissue triglycerides and amino acids from muscle, blood, liver and the gut [2].</p>
+<p>Carbohydrates offer advantage over fat as substrate since it has been established that it provides greater yield of adenosine triphosphate per volume of oxygen that can be delivered to the mitochondria improving gross exercise efficiency [4].</p>
+        <p>Since the <mark>size of carbohydrates stores is relatively limited</mark> it has been established that supplementing with exogenous sources of carbohydrates is linked to an improved athletes performance [5].</p>
+<p>Depending on the type and duration of exercise general guidelines for supplementing have been established [6].</p>
+        <p>Historically, guidelines for carbohydrates ingestion during endurance sports have been based on studies investigating <mark>maximal rates of exogenous CHO oxidation</mark> [7]. This is one of the limiting factors used for race nutrition strategy planning.</p>
+        <p>Initial studies recommended athletes consume 60-70 grams per hour of carbohydrates [8]. However more recent studies showed higher rates of exogenous carbohydrates oxidation when multiple types of carbohydrates (glucose and fructose or glucose and sucrose) consumed. Strong evidence supports ingestion of <mark>up to 108 grams per hour</mark> of mixed carbohydrates [9].</p>
+<p>Practical evidence suggest that even higher amounts of carbohydrates intakes (up to 126 grams per hour) may be used especially during the cycling stage. But no evidence of improved oxidation rates or improved performance were provided [1].</p>
+<p>Gastrointestinal (GI) distress linked nutrition intake usually reported in both laboratory and racing conditions. This is highly individual and should be taken in consideration when choosing type, brand and amount of nutrition taken. There are numerous anecdotal evidence supporting different type of carbohydrate form. Don&rsquo;t Bonk suggests testing different combinations during pre-season and key training sessions mimicking racing conditions and adjusting based on body feedback.</p>
+        <p>Evidence suggest that <mark>gut can be trained to deal with high carbohydrate intakes</mark> emphasising importance of pre-season testing.</p>
+<br>
+        <h2>Hydration</h2>
+<p>Water lost during exercise-induced sweating can lead to dehydration of both intracellular and extracellular fluid compartments of the body.</p>
+<p>Even a small amount of dehydration (1% body weight) can increase cardiovascular strain as indicated by a disproportionate elevation of heart rate during exercise, and limit the ability of the body to transfer heat from contracting muscles to the skin surface where heat can be dissipated to the environment. Therefore, consequences of body water deficits can increase the probability for impairing exercise performance and developing heat injury (interestingly some papers established that relationship as early as 1974 [10]).</p>
+        <p>The key issue in hydration is striking a <mark>balance between taking too little (loosing over 2% of BW) and taking too much water (gaining weight, hyponatremia)</mark>.</p>
+<p>It is also has been established that sweat rate differ between individual athletes and race / training session conditions. Some athletes can get away with taking as little as 200 ml/hour during a 2 hour exercise in comfortable conditions, while in hot and humid environments sweat rates can exceed 2 l/hour.</p>
+        <p>Thus it is important for every athlete to <mark>establish their sweat rate in particular race conditions</mark> and plan accordingly. Make a habit of weighting yourself before every training session and after, noting the amount of fluid intake and ambient temperature and humidity. It is not uncommon among professional athletes to simulate race conditions in controlled environments or going early to a country where the race will be held not just to acclimate but also to fine-tune their nutrition and hydration plan.</p>
+        <p>Hydrating to thirst has been established to be a poor strategy leading often to <mark>insufficient hydration</mark>.</p>
+<p>Hydration is often challenging due to logistics. It is not uncommon to aim to ingest over 5 liters of fluids during a full ironman. While cycling stage provides for plenty of opportunity to carry necessary amounts of fluids on your bike, it is much harder to do during running stage. Plan accordingly.</p>
+<br>
+        <h2>Don&rsquo;t Bonk nutrition planner algorithm</h2>
+<p>Don&rsquo;t Bonk nutrition planner uses athletes input data and calculates required nutrition targets. Those targets are then used to suggest products and amount of servings needed for a particular product for each stage of the race.</p>
+        <p><mark>Algorithm prioritises carbohydrate intake</mark>. It takes into account how much liquid storage you have on each stage of the race and fills that storage with carbohydrate drink since it is the main and most versatile source of carbs.</p>
+<p>Next total amount of sodium intake is calculated and appropriate additional sodium is added. Algorithm implies that this sodium will be added to carbohydrate drink.</p>
+<p>Finally we note amount of liquid that should be taken on the course aid stations.</p>
+<br>
+        <h2>References</h2>
+<p>[1] <a href="https://pubmed.ncbi.nlm.nih.gov/11993622/">https://pubmed.ncbi.nlm.nih.gov/11993622/</a></p>
+        <p>[2] <a href="https://journals.lww.com/acsm-msse/Fulltext/2016/03000/Nutrition_and_Athletic_Performance.25.aspx">https://journals.lww.com/acsm-msse/Fulltext/2016/03000/Nutrition_and_Athletic_Performance.25.aspx</a></p>
+<p>[4] <a href="https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0033-1348254">https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0033-1348254</a></p>
+<p>[5] <a href="https://link.springer.com/article/10.2165/11533080-000000000-00000">https://link.springer.com/article/10.2165/11533080-000000000-00000</a></p>
+<p>[6] <a href="https://www.tandfonline.com/doi/pdf/10.1080/02640414.2011.585473?needAccess=true">https://www.tandfonline.com/doi/pdf/10.1080/02640414.2011.585473?needAccess=true</a></p>
+<p>[7] <a href="https://www.sciencedirect.com/science/article/pii/S1440244007001557">https://www.sciencedirect.com/science/article/pii/S1440244007001557</a></p>
+<p>[8] <a href="https://link.springer.com/article/10.2165/00007256-200029060-00004">https://link.springer.com/article/10.2165/00007256-200029060-00004</a></p>
+<p>[9] <a href="https://journals.lww.com/acsm-msse/Fulltext/2005/03000/Oxidation_of_Combined_Ingestion_of_Maltodextrins.13.aspx">https://journals.lww.com/acsm-msse/Fulltext/2005/03000/Oxidation_of_Combined_Ingestion_of_Maltodextrins.13.aspx</a></p>
+<p>[10] <a href="https://journals.lww.com/acsm-msse/Abstract/1974/00620/Thermal_effects_of_prolonged_treadmill_exercise_in.19.aspx">https://journals.lww.com/acsm-msse/Abstract/1974/00620/Thermal_effects_of_prolonged_treadmill_exercise_in.19.aspx</a></p>
+<p>[11] <a href="https://journals.lww.com/acsm-msse/Fulltext/1996/10000/ACSM_Position_Stand__Exercise_and_Fluid.45.aspx">https://journals.lww.com/acsm-msse/Fulltext/1996/10000/ACSM_Position_Stand__Exercise_and_Fluid.45.aspx</a></p>
+    </div>
     {% endblock %}
 </body>
 </html>
