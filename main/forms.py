@@ -19,7 +19,7 @@ class CalculationForm(forms.Form):
     weight = forms.FloatField(label="Athlete's weight (kg)", initial=70, step_size=1)
     carb_rate = forms.IntegerField(label="Carb intake rate (g/hour)", initial=80, step_size=5)
     sweat_rate = forms.IntegerField(label="Sweat rate (ml/hour)", initial=800, step_size=50)
-    sodium_rate = forms.IntegerField(label="Sodium loss rate (mg/hour)", initial=600, step_size=50)
+    sodium_rate = forms.IntegerField(label="Sodium loss rate (mg/l)", initial=900, step_size=50)
     bike_liquid_storage = forms.IntegerField(label = 'Bike liquid storage (ml)', initial=2000, step_size=50)
     run_liquid_storage = forms.IntegerField(label = 'Run liquid storage (ml)', initial=0, step_size=50)
     #test_duration_field = forms.DurationField(label = 'Test duration field', initial='5:00')

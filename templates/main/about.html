@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 {% extends 'base.html' %}
 <html lang="en">
    <head>
@@ -12,6 +12,7 @@
    <body>
       {% load static %}
       {% block body %}
+
       <br>
       <h1>Why I made Don't Bonk?</h1>
       <h5>And how it can help you.</h5>
@@ -32,10 +33,11 @@
          <br>
           My aim was to be <mark>somewhere between a folklore broscience and a qualified personal coach</mark> (which in my opinion is still the best option for a predictable result). <br>
 
-          <div class="container-sm" >
-         <img src="{% static 'main/dontbonkchart2.jpg'  %}" class="img-fluid">
-          </div>
-         <br>
+          <figure class="figure">
+              <img src="{% static 'main/dontbonkchart2.jpg' %}" class="figure-img img-fluid rounded" alt="dontbonk.io triathlon nutrition planner can help better than triathlon Taren">
+              <figcaption class="figure-caption">The amature triathlete support landscape.</figcaption>
+          </figure>
+
 
           It is not perfect by any means. It is just a tool. And I am looking forward to your feedback to make it better.
           </p>

@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.utils import timezone
 from .forms import CalculationForm, ProductForm
 from datetime import timedelta
-from .calculations import get_estimated_swim_time, total_tri_time, total_nutrition, plan_bike, plan_run, count_list_items, nutrition_planner
-from .models import Nutrition
+from .calculations import get_estimated_swim_time, total_tri_time, total_nutrition, plan_bike, plan_run, count_list_items, nutrition_planner, generate_random_name
+from .models import Nutrition, CalculationEntry
 from random import choice
 from itertools import chain
 
@@ -58,31 +59,37 @@ def home(request):
                     'sodium': 0,
                 }
 
+                # Создаем списки продуктов для случайного выбора
                 q_set = Nutrition.objects.all()#.filter(brand_name='Maurten')
 
-                all_drinks = q_set.filter(category='drink')
-                random_drink = choice(all_drinks)
+                # Новый код для определения списка продуктов из курируемого списка на основе случайного бренда
 
-                all_food = q_set.filter(category='food')
-                random_food = choice(all_food)
-
-                all_sodium_drinks = q_set.filter(category='sodium_drink')
-                random_sodium_drink = choice(all_sodium_drinks)
-                print(random_sodium_drink)
-
-                all_water = q_set.filter(category='water')
-                water = choice(all_water)
-
-                sodium_food = q_set.filter(short_name='judees_sodium')
-                sodium_food = choice(sodium_food)
-
-                random_product_set = {
-                    'drink': random_drink.simplify(),
-                    'food': random_food.simplify(),
-                    'sodium_drink': random_sodium_drink.simplify(),
-                    'sodium_food': sodium_food.simplify(),
-                    'water':water.simplify(),
+                # product_set_cheme: drink, food, sodium_drink, sodium_food, water
+                curated_product_set = {
+                    'sis': ['sis_beta_80', 'sis_beta_gel', 'skratch_hydration_drink', 'saltstick_fastchews', 'water'],
+                    'maurten': ['maurten_drink_320', 'maurten_gel_100', 'skratch_hydration_drink', 'saltstick_fastchews',
+                                'water'],
+                    'gu' : ['gu_roctane_drink_nocaf', 'gu_roctane_gel','gu_hydro_tabs', 'gu_sodium_caps', 'water']
                 }
+
+                base_set = curated_product_set[choice(list(curated_product_set.keys()))]
+                #print(base_set)
+                base_drink = q_set.get(short_name = base_set[0])
+                base_food = q_set.get(short_name=base_set[1])
+                base_sodium_drink = q_set.get(short_name=base_set[2])
+                base_sodium_food = q_set.get(short_name=base_set[3])
+                base_water = q_set.get(short_name=base_set[4])
+
+                base_product_set = {
+                    'drink': base_drink.simplify(),
+                    'food': base_food.simplify(),
+                    'sodium_drink': base_sodium_drink.simplify(),
+                    'sodium_food': base_sodium_food.simplify(),
+                    'water': base_water.simplify(),
+                }
+
+                #print('RANDOM PRODUCT SET', random_product_set)
+                print('CURATED PRODUCT SET', base_product_set)
 
                 product_set = {
                     'drink': input['drink_products'],
@@ -95,7 +102,7 @@ def home(request):
 
                 for i in product_set:
                     if product_set[i] is None:
-                        product_set[i] = random_product_set[i]
+                        product_set[i] = base_product_set[i]
                     else:
                         product_set[i] = product_set[i].simplify()
 
@@ -155,8 +162,6 @@ def home(request):
 
 
 
-
-
         print(bike_display_set_list)
         args = {
             'form':form,
@@ -177,6 +182,11 @@ def home(request):
             'bike_display_set_list': bike_display_set_list,
             'run_display_set_list': run_display_set_list,
         }
+
+        random_entry_name = generate_random_name()
+
+        calculation_entry = CalculationEntry(input_data=input, input_products=product_set, calculation_result= args, random_name=random_entry_name, entry_date=timezone.now())
+        calculation_entry.save()
 
         return render(request, 'main/home.html', args)
 

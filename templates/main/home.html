@@ -12,17 +12,21 @@
 	</head>
 	<body>
 		{% block body %}
-		<div class="container">
+
+
 			<br>
 			<h1>Don't Bonk&trade; Triathlon Nutrition Planner</h1>
 			<h2>Science based approach to a perfect race nutrition plan</h2>
-			<h5><small class="text-muted">Planner v0.04b</small></h5>
+			<h5><small class="text-muted">Planner v0.05b</small></h5>
 			<br>
-			<p>It is often said that in triathlon <mark>nutrition is the fourth discipline</mark>. So it is extemely important you nail your carbs, calories and liquid on a race day and get the best results that you worked hard to achieve.
-				This planner will help you to estimate the amount of each and then to put it into practice by selecting the right products for the job. You can read more on how it works in the <a href="research">Research</a> section.
+			<p>It is often said that in triathlon <mark>&#127829; nutrition is the fourth discipline</mark>. So it is extemely important you nail your carbs, liquid and sodium intake on a race day and get the best results that you worked hard to achieve.
+				This planner will help you to estimate the amount of each and then to put it into practice by selecting the right products for the job. You can read more on how it works in the <mark>&#128300; <a href="research">Research</a></mark> section.
 			</p>
+
+
+
 			<br>
-			<div class="container">
+
 				<div class="row">
 					<div class="col">
 						<h2>
@@ -38,42 +42,42 @@
                             <p><small class="text-muted">Enter race segment distances and expected pace. Be conservative.</small></p>
 							<table>
 								<tr>
-									<th>{{ form.swim_distance.label_tag }}</th>
-									<td>
+                                    <th>&#127754; {{ form.swim_distance.label_tag }} </th>
+                                    <td>
 										{{ form.swim_distance.errors }}
 										{{ form.swim_distance }}
 									</td>
 								</tr>
 								<tr>
-									<th>{{ form.swim_pace.label_tag }}</th>
+									<th>&#127946; {{ form.swim_pace.label_tag }}</th>
 									<td>
 										{{ form.swim_pace.errors }}
 										{{ form.swim_pace }}
 									</td>
 								</tr>
 								<tr>
-									<th>{{ form.bike_distance.label_tag }}</th>
+									<th>&#128692; {{ form.bike_distance.label_tag }}</th>
 									<td>
 										{{ form.bike_distance.errors }}
 										{{ form.bike_distance }}
 									</td>
 								</tr>
 								<tr>
-									<th>{{ form.bike_avg_speed.label_tag }}</th>
+									<th>&#128692; {{ form.bike_avg_speed.label_tag }}</th>
 									<td>
 										{{ form.bike_avg_speed.errors }}
 										{{ form.bike_avg_speed }}
 									</td>
 								</tr>
 								<tr>
-									<th>{{ form.run_distance.label_tag }}</th>
+									<th>&#127939; {{ form.run_distance.label_tag }}</th>
 									<td>
 										{{ form.run_distance.errors }}
 										{{ form.run_distance }}
 									</td>
 								</tr>
 								<tr>
-									<th>{{ form.run_pace.label_tag }}</th>
+									<th>&#127939; {{ form.run_pace.label_tag }}</th>
 									<td>
 										{{ form.run_pace.errors }}
 										{{ form.run_pace }}
@@ -104,28 +108,29 @@
                             <p><small class="text-muted">Specify your pre-race weight and carb intake rate, sweat rate and sodium loss rate. You can read more details on what to put here in <a href="research">Research</a> section. Keep default if you don't have data or unsure.</small></p>
 							<table>
 								<tr>
-									<th>{{ form.weight.label_tag }}</th>
+									<th>&#127939; {{ form.weight.label_tag }}</th>
 									<td>
 										{{ form.weight.errors }}
 										{{ form.weight }}
 									</td>
 								</tr>
 								<tr>
-									<th>{{ form.carb_rate.label_tag }}</th>
+									<th>&#127820; {{ form.carb_rate.label_tag }} <button type="button" style="padding: 1px 3px; font-size: 12px;" class="btn btn-info btn-xs" data-toggle="popover" data-trigger="focus" data-bs-placement="top" data-bs-title = "How do I know my carb intake rate?" data-bs-content="It depends on how well your gut is adapted to consuming high amounts of carbohydrates. If you are not well trained research says safe amount is in the range of 30-60 g/hour. Well trained athletes can tolerate up to 120 g/hour. Be conservative. For more information on gut training read our blog.">HELP</button></th>
 									<td>
 										{{ form.carb_rate.errors }}
 										{{ form.carb_rate }}
 									</td>
 								</tr>
 								<tr>
-									<th>{{ form.sweat_rate.label_tag }}</th>
+									<th>&#128166; {{ form.sweat_rate.label_tag }} <button type="button" style="padding: 1px 3px; font-size: 12px;" class="btn btn-info btn-xs" data-toggle="popover" data-trigger="focus" data-bs-placement="top" data-bs-title = "How do I establish my sweat rate?" data-bs-content="Sweat rate is individual to each athlete and highly dependent on racing conditions. The best way to establish your sweat rate is to weigh yourself butt-naked before each training session, record all amounts of liquids and food consumed during excersize and then weigh yourself (again, naked) after the excersize. The difference in weight divided by time is your sweat rate. It is best to do this as close to racing conditions as possible. The average sweat rate is 800 ml/hour but be careful - it is a VERY rough estimation.">HELP</button></th>
+
 									<td>
 										{{ form.sweat_rate.errors }}
 										{{ form.sweat_rate }}
 									</td>
 								</tr>
 								<tr>
-									<th>{{ form.sodium_rate.label_tag }}</th>
+									<th>&#129474; {{ form.sodium_rate.label_tag }} <button type="button" style="padding: 1px 3px; font-size: 12px;" class="btn btn-info btn-xs" data-toggle="popover" data-trigger="focus" data-bs-placement="top" data-bs-title = "What is sodium loss rate?" data-bs-content="When you sweat you loose sodium with your sweat. The best way to know your sodium loss rate is to do a test in a sports lab. Self testing devices are also an emerging alternatives but have not been properly tested. A solid average number would be between 800 to 1000 mg/l. But individual ranges can vary widely between 300 and 2000 mg/l.">HELP</button></th>
 									<td>
 										{{ form.sodium_rate.errors }}
 										{{ form.sodium_rate }}
@@ -139,7 +144,8 @@
 								<div class="accordion-item">
 									<h2 class="accordion-header" id="flush-headingOne">
 										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="background-color: #f7f7f7">
-                                            <h5>33 products or leave blank to use random</h5>
+                                            <h5> 83 products to choose from <small class="text-muted"> - Choose one you will use from each category or leave blank to use random curated suggestion based on Maurten, SiS or GU products</small></h5>
+                                            <small></small>
 										</button>
 									</h2>
 									<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -172,13 +178,13 @@
 								</div>
 							</div>
                             <br>
-							<input class="btn btn-primary" type="submit" name="calculate" value="Create nutrition plan">
+							<input class="btn btn-primary btn-lg" type="submit" name="calculate" value="Create nutrition plan">
 						</form>
 						<br>
 					</div>
 				</div>
-			</div>
-			<div class="container">
+
+
 				<div class="row">
 					<div claa="col">
 						<br>
@@ -188,7 +194,7 @@
 						</h2>
 						<br>
 						<p>
-							Your <mark>total race time</mark> is estimated at {{ total_time }}. Here is how much carbohydrates, liquid and sodium you will need:
+                            Your <mark>&#129351; total race time</mark> is estimated at <mark>&#9201; {{ total_time }}</mark>. Here is how much carbohydrates, liquid and sodium you will need:
 						</p>
 						<div class="row">
 							<div class="col">
@@ -196,10 +202,10 @@
 									<thead>
 										<tr>
 											<th scope="col"></th>
-											<th scope="col">Time (hh:mm:ss)</th>
-											<th scope="col">Carbs (grams)</th>
-											<th scope="col">Liquid (ml)</th>
-											<th scope="col">Sodium (mgrams)</th>
+											<th scope="col">&#9201; Time (hh:mm:ss)</th>
+											<th scope="col">&#127820; Carbs (grams)</th>
+											<th scope="col">&#128166; Liquid (ml)</th>
+											<th scope="col">&#129474; Sodium (mgrams)</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -225,7 +231,7 @@
 											<td>{{ bike_sodium_target }}</td>
 										</tr>
 										<tr>
-											<th scope="row">&#127939 Run</th>
+											<th scope="row">&#127939; Run</th>
 											<td>{{ run_time }}</td>
 											<td>{{ run_carbs_target }}</td>
 											<td>{{ run_liquid_target }}</td>
@@ -244,8 +250,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="container">
+
+
 				<div class="row">
 					<div class="col">
 						<br>
@@ -261,7 +267,7 @@
                             If liquid storage is not enough to hydrate properly it will suggest using Aid Station water measured in standard plastic 200ml cups.
 						</p>
 						<h4>
-							Bike
+							&#128690; Bike
 						</h4>
                         <p>Bike is the best time to consume as much nutrition and fluids as possible. You may deviate from your plan and additionally consume some of the running leg nutrition.</p>
 						<p>
@@ -270,10 +276,10 @@
 								<table class="table">
 									<thead>
 										<tr>
-											<th scope="col">Product (Servings)</th>
-											<th scope="col">Carbs (grams)</th>
-											<th scope="col">Liquid (ml)</th>
-											<th scope="col">Sodium (mg)</th>
+											<th scope="col">&#129514; Product (Servings)</th>
+											<th scope="col">&#127820; Carbs (grams)</th>
+											<th scope="col">&#128166; Liquid (ml)</th>
+											<th scope="col">&#129474; Sodium (mg)</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -301,7 +307,7 @@
 							</div>
 						</div>
 						<h4>
-							Run
+							&#127939; Run
 						</h4>
                         <p>
                             It is harder to consume lots of food and fluid during running section due to both logistics and higher stress on GI. Prioritize gels and don't overhydrate.
@@ -311,10 +317,10 @@
 								<table class="table">
 									<thead>
 										<tr>
-											<th scope="col">Product and Servings</th>
-											<th scope="col">Carbs (grams)</th>
-											<th scope="col">Liquid (ml)</th>
-											<th scope="col">Sodium (mg)</th>
+											<th scope="col">&#129514; Product (Servings)</th>
+											<th scope="col">&#127820; Carbs (grams)</th>
+											<th scope="col">&#128166; Liquid (ml)</th>
+											<th scope="col">&#129474; Sodium (mg)</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -343,8 +349,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+
 		<br>
 		<br>
 		{% endblock %}

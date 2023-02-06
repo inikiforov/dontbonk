@@ -1,0 +1,83 @@
+id,full_name,short_name,brand_name,drink,category,calories,carbs,liquid,sodium,caffene,price,carry_weight,directions
+84,PURE Endurance Formula,pure_endurance,PURE,1,drink,107,21,500,200,0,1.62,500.0,None
+83,PURE Electrolyte Hydration,pure_electrolyte,PURE,1,sodium_drink,50,13,250,100,0,0.64,250.0,None
+82,PURE Electrolyte Replacement Capsules,pure_caps,PURE,0,sodium_food,0,0,0,173,0,0.36,1.0,None
+81,PURE Fluid Energy Gel,pure_fluid_gel,PURE,0,food,105,26,0,30,0,2.59,50.0,None
+80,PURE Energy Gel,pure_gel,PURE,0,food,95,23,0,49,0,2.59,35.0,None
+79,UCAN Hydrate Electrolyte,ucan_hydrate,UCAN,1,sodium_drink,0,0,500,300,0,0.83,500.0,None
+78,UCAN EDGE Energy Gel,ucan_gel,UCAN,0,food,70,19,0,55,0,2.91,53.0,None
+77,Red Bull,redbull,Red Bull,1,drink,160,40,350,150,114,2.99,350.0,None
+76,Hammer Nutrition Endurolytes Extreme Powder,hammer_powder,Hammer Nutrition,0,sodium_food,5,1,0,120,0,0.39,2.0,None
+75,Hammer Nutrition Endurolytes Extreme,hammer_endurolytes_extreme,Hammer Nutrition,0,sodium_food,0,0,0,110,0,0.5,5.0,None
+74,Hammer Nutrition Endurolytes,hammer_endurolytes,Hammer Nutrition,0,sodium_food,0,0,0,80,0,0.42,4.0,None
+73,Hammer Nutrition Endurolytes Fizz,hammer_fizz,Hammer Nutrition,1,sodium_drink,7,2,500,200,0,0.53,500.0,None
+72,Hammer Nutrition Sustained Energy 2.0,hammer_energy,Hammer Nutrition,1,drink,200,43,500,80,0,1.87,500.0,None
+71,Hammer Nutrition Perpetuem Solids,hammer_solids,Hammer Nutrition,0,food,100,20,0,80,0,1.33,26.0,None
+70,Hammer Nutrition Gel,hammer_gel,Hammer Nutrition,0,food,90,22,0,25,0,1.6,33.0,None
+69,Hammer Nutrition HEED,hammer_heed,Hammer Nutrition,1,drink,110,27,500,60,0,1.19,500.0,None
+68,Hammer Nutrition Perpetuem 2.0,hammer_perpetuem,Hammer Nutrition,1,drink,180,37,500,170,0,1.25,500.0,None
+67,INFINIT: GO FAR,infinit_go_far,INFINIT,1,drink,280,66,590,379,0,2.5,590.0,None
+66,INFINIT: SPEED,infinit_speed,INFINIT,1,drink,230,57,590,379,0,2.05,590.0,None
+65,Precision Hydration Electrolyte Capsules,precision_capsules,Precision Hydration,0,sodium_food,0,0,0,250,0,0.67,1.36,None
+64,Precision Hydration PH 500,precision_ph500,Precision Hydration,1,sodium_drink,10,3,500,250,0,1.19,500.0,None
+63,Precision Hydration PH 1000,precision_ph1000,Precision Hydration,1,sodium_drink,10,3,500,500,0,1.19,500.0,None
+62,Precision Hydration PH 1500,precision_ph1500,Precision Hydration,1,sodium_drink,12,4,500,750,0,1.19,500.0,None
+61,Precision Hydration PF 30 Chew,precision_pf30_chew,Precision Hydration,0,food,120,30,0,0,0,2.49,34.0,None
+60,Precision Hydration PF 30 Drink Mix,precision_pf30_drink,Precision Hydration,1,drink,120,30,500,500,0,1.6,500.0,None
+59,Precision Hydration PF 90 Gel,precision_pf90_gel,Precision Hydration,0,food,360,90,0,0,0,6.66,153.0,None
+58,Precision Hydration PF 30 Caffeine Gel,precision_pf30_gel_caf,Precision Hydration,0,food,120,30,0,0,100,3.0,51.0,None
+57,Precision Hydration PF 30 Gel,precision_pf30_gel,Precision Hydration,0,food,120,30,0,0,0,3.0,51.0,None
+56,Coca-Cola Original,coca_cola,Coca-Cola,1,drink,240,65,590,75,57,0.76,475.0,None
+55,Gatorade Endurance Formula,gatorade_formula,Gatorade,1,sodium_drink,90,22,350,300,0,0.92,350.0,None
+54,Gatorade Endurance Gatorlytes,gatorade_gatorlytes,Gatorade,1,sodium_food,0,0,590,780,0,0.68,590.0,None
+53,Propel Powder,propel_powder,Propel,1,sodium_drink,0,0,500,210,0,0.25,500.0,None
+52,Gatorade Thirst Quencher,gatorade_quencher,Gatorade,1,sodium_drink,80,22,350,160,0,0.6,350.0,None
+50,Gatorade Endurance Energy Gel + Caffeine,gatorade_gel_caf,Gatorade,0,food,80,20,0,90,30,2.16,37.0,None
+49,Gatorade Endurance Energy Gel,gatorade_gel,Gatorade,0,food,80,20,0,90,0,1.83,37.0,None
+48,Pickle Juice,pickle_juice,Best Maid Dill Juice,0,sodium_food,0,0,60,500,0,0.29,60.0,2 oz serving of Dill Juice
+47,The Right Stuff,the_right_stuff,The Right Stuff,0,sodium_food,0,0,25,1780,0,3.0,24.0,None
+46,LMNT Recharge,lmnt_recharge,LMNT,1,sodium_drink,0,0,500,1000,0,1.5,500.0,None
+45,Banana,banana,Cavendish,0,food,105,30,0,0,0,0.2,118.0,None
+44,Snickers Bar,snickers,Mars,0,food,250,32,0,125,0,1.19,57.2,None
+43,NUUN Instant,nuun_instant,NUUN,1,sodium_food,25,7,500,520,0,0.94,500.0,None
+42,NUUN Endurance + Caffeine,nuun_endurance_caf,NUUN,1,drink,60,16,500,380,25,1.25,500.0,None
+41,NUUN Endurance,nuun_endurance,NUUN,1,drink,60,16,500,380,0,1.25,500.0,None
+40,NUUN Sport,nuun_sport,NUUN,1,sodium_drink,15,4,500,300,0,0.75,500.0,None
+39,CLIF Bloks Energy Chews Caffeine,clif_chews_caf,CLIF,0,food,200,48,0,100,100,2.0,60.0,None
+38,CLIF Bloks Energy Chews 2x Sodium,clif_chews_2x_sodium,CLIF,0,food,180,48,0,200,0,2.28,60.0,None
+37,CLIF Bloks Energy Chews,clif_chews,CLIF,0,food,200,48,0,100,0,2.0,60.0,None
+36,CLIF Shot Energy Gel Caffeine,clif_gel_caf,CLIF,0,food,100,25,0,90,25,1.13,34.0,None
+35,CLIF Shot Energy Gel,clif_gel,CLIF,0,food,100,25,0,90,0,1.54,34.0,None
+34,SaltStick FastChews,saltstick_fastchews,SaltStick,0,sodium_food,10,2,0,100,0,0.52,3.1,2 tablets per serving
+33,SaltStick Caps,saltstick_caps,SaltStick,0,sodium_food,0,0,0,215,0,0.22,1.0,1 capsule
+32,Kirkland Signature Maple Syrup (60 ml),kirkland_maple_syrup,Kirkland,0,food,220,54,0,0,0,1.44,79.8,As per Lionel Sanders recommendation
+31,Skratch Labs Energy Chews Caf,skratch_chews_caf,Skratch Labs,0,food,140,36,0,160,50,2.4,50.0,Per container (4 servings) - probably wrong
+30,Skratch Labs Energy Chew,skratch_chew,Skratch Labs,0,food,140,32,0,160,0,2.4,50.0,2 servings also probably wrong
+29,Skratch Labs Energy Bar,skratch_bar,Skratch Labs,0,food,220,33,0,125,0,2.5,50.0,Based on chocolate chip bar
+28,Skratch Labs Superfuel Drink Mix,skratch_superfuel_drink,Skratch Labs,1,drink,400,100,500,400,0,5.24,500.0,None
+27,Skratch Labs Hyper Hydration Drink Mix,skratch_hyper_drink,Skratch Labs,1,sodium_drink,80,17,500,1720,0,2.93,500.0,None
+26,Skratch Labs Clear Hydration Drink Mix,skratch_clear_hydration_drink,Skratch Labs,1,sodium_drink,50,13,350,270,0,1.37,500.0,None
+25,GU Electrolyte Capsules,gu_sodium_caps,GU,0,sodium_food,0,0,0,140,0,0.18,0.9,None
+24,GU Energy Chews,gu_chews,GU,0,food,160,40,0,80,0,2.5,54.0,"Per pne sleeve (double serving, 8 chews)"
+23,GU Roctane Energy Drink Mix,gu_roctane_drink_nocaf,GU,1,drink,250,60,590,320,0,2.5,590.0,None
+22,GU Roctane Energy Drink Mix Caf,gu_roctane_drink_caf,GU,1,drink,250,60,590,320,35,2.5,590.0,None
+21,GU Energy Gel,gu_gel,GU,0,food,100,23,0,125,0,1.6,32.0,None
+20,GU Liquid Energy Gel,gu_liquid_gel,GU,0,food,95,23,0,190,20,2.1,60.0,None
+19,GU Roctane Energy Gel,gu_roctane_gel,GU,0,food,100,21,0,125,35,2.6,32.0,None
+18,Aid Station Water 200ml Cup,water,Water,1,water,0,0,200,0,0,0.0,0.0,"Normal water that you can get at an aid station, measured by standard full plastic 200ml cup."
+17,SiS GO Isotonic Energy Gel,sis_go_gel_isotonic,SiS,0,food,87,22,0,10,0,1.87,60.0,None
+16,SiS GO Energy Gel Electrolyte,sis_go_gel_electrolyte,SiS,0,food,87,22,0,300,0,1.87,60.0,None
+15,SiS GO Energy Gel Caffeine,sis_go_gel_caf,SiS,0,food,85,21,0,40,75,2.4,60.0,None
+14,SiS Beta Fuel Energy Chew,sis_beta_chew,SiS,0,food,190,45,0,100,0,2.1,60.0,None
+13,SiS Beta Fuel Gel,sis_beta_gel,SiS,0,food,158,40,0,30,0,2.1,60.0,None
+12,Maurten Solid 225 C,maurten_solid_225_c,Maurten,0,food,225,42,0,270,0,3.0,60.0,None
+11,Maurten Solid 225,maurten_solid_225,Maurten,0,food,225,43,0,260,0,3.0,60.0,None
+10,Maurten Gel 100,maurten_gel_100,Maurten,0,food,100,25,0,34,0,3.6,40.0,None
+9,Maurten Drink Mix 160,maurten_drink_160,Maurten,1,sodium_drink,160,39,500,400,0,2.33,500.0,None
+8,Maurten Drink Mix 320,maurten_drink_320,Maurten,1,drink,320,79,500,200,0,3.43,500.0,None
+7,Skratch Labs Hydration Drink Mix,skratch_hydration_drink,Skratch Labs,1,sodium_drink,80,21,415,380,0,1.1,415.0,None
+6,Judee's Sodium Citrate (1 g),judees_sodium,Judee's,0,sodium_food,2,0,0,230,0,0.03,1.0,Serving size is 3g. This is just a 1/3 of a serving. Add to drinks.
+5,GU Hydration Drink Tabs,gu_hydro_tabs,GU,1,sodium_drink,10,3,500,320,0,0.59,500.0,None
+3,SiS Beta Fuel 80,sis_beta_80,SiS,1,drink,320,80,590,10,0,2.7,590.0,None
+2,Maurten Gel 100 Caf,maurten_gel_100_caf,Maurten,0,food,100,25,40,22,100,4.16,40.0,None
+1,Maurten Drink Mix 320 Caf,maurten_drink_320_caf,Maurten,1,drink,320,79,500,250,100,4.0,500.0,None

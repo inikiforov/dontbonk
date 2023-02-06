@@ -1,4 +1,6 @@
 from django.db import models
+import random
+import string
 
 class Nutrition(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -12,6 +14,8 @@ class Nutrition(models.Model):
     liquid = models.IntegerField()
     sodium = models.IntegerField(blank=True)
     caffene = models.IntegerField(blank=True)
+    price = models.FloatField(blank=True)
+    carry_weight = models.FloatField(blank=True)
     directions = models.TextField(max_length=200, default='None')
 
 
@@ -35,4 +39,15 @@ class Nutrition(models.Model):
                 'carbs': self.carbs,
                 'sodium': self.sodium,
             }
+
+class CalculationEntry(models.Model):
+    id = models.BigAutoField(primary_key = True)
+    input_data = models.TextField()
+    input_products = models.TextField()
+    calculation_result = models.TextField()
+    random_name = models.CharField(max_length=10, unique=True)
+    entry_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.random_name
 

@@ -1,6 +1,7 @@
 from datetime import timedelta
-from .models import Nutrition
+from .models import Nutrition, CalculationEntry
 import random
+import string
 
 
 
@@ -58,9 +59,9 @@ def total_nutrition(timing_list, input):
     bike_liquid_rate = input['sweat_rate']
     run_carb_rate = input['carb_rate']
     run_liquid_rate = input['sweat_rate']
-    sodium_rate = input['sodium_rate']
-    bike_sodium_rate = input['sodium_rate']
-    run_sodium_rate = input['sodium_rate']
+    sodium_rate = input['sodium_rate']*(input['sweat_rate']/1000)
+    bike_sodium_rate = input['sodium_rate']*(input['sweat_rate']/1000)
+    run_sodium_rate = input['sodium_rate']*(input['sweat_rate']/1000)
     bike_carbs_target = (bike_carb_rate/60/60)*timing_list[3]
     bike_liquid_target = (bike_liquid_rate/60/60)*timing_list[3]
     bike_sodium_target = (bike_sodium_rate/60/60)*timing_list[3]
@@ -84,7 +85,7 @@ def add_serving(plan, category, product):
 
 
 def plan_bike(plan, product_set, target, storage_limits):
-    #load carbs while checking not to exceed luqid storage limit
+    #load carbs while checking not to exceed liquid storage limit
     while plan['carbs'] + product_set['drink']['carbs'] <= target['carbs'] and plan['liquid'] + product_set['drink']['liquid'] <= storage_limits['bike_liquid']:
         add_serving(plan, 'drink', product_set['drink'])
     #load additional carbs - gels that dont require liquid carry capacity
@@ -173,3 +174,11 @@ def nutrition_planner(nutrition_list, q_set):
 
     output.append(total)
     return output
+
+def generate_random_name():
+    random_name = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
+    while CalculationEntry.objects.filter(random_name=random_name).exists():
+        random_name = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
+
+    print('New random name is:', random_name)
+    return random_name

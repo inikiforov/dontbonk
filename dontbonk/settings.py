@@ -27,7 +27,9 @@ SECRET_KEY = "django-insecure-el&!!5y#=327tc1l-o_c%nlte!s^rg*9s7@&8dyk5(dnl7o@pv
 DEBUG = False
 
 ALLOWED_HOSTS = ['www.dontbonk.io']
+#ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
@@ -42,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 	'django.contrib.sitemaps',
     "main",
+    'ckeditor',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -121,8 +125,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_URL = "static/"
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
